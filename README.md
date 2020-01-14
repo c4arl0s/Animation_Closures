@@ -110,7 +110,7 @@ let comboTransform = scaleTransform.concatenating(rotateTransform).concatenating
 square.transform = comboTransform
 ```
 
-# gather all the code together (no matter the position of the code, always do the same thing, threats!!!)
+### gather all the code together (no matter the position of the code, always do the same thing, threats!!!)
 
 ```swift
 UIView.animate(withDuration: 5.0) {
