@@ -84,6 +84,62 @@ UIView.animate(withDuration: 5.0, delay: 2.0, options: [.repeat], animations: {
 
 - You won't need an advanced math degree to use them.
 
+### scale
+
+```swift
+let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+```
+
+### rotate
+```swift
+let rotateTransform = CGAffineTransform(rotationAngle: .pi)
+```
+
+### translate
+```swift
+let translateTransform = CGAffineTransform(translationX: 200, y: 200)
+```
+
+### concatenating
+```swift
+let comboTransform = scaleTransform.concatenating(rotateTransform).concatenating(translateTransform)
+```
+
+### asign property transform
+```swift
+square.transform = comboTransform
+```
+
+# gather all the code together (no matter the position of the code, always do the same thing, threats!!!)
+
+```swift
+UIView.animate(withDuration: 5.0) {
+    let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+    let rotateTransform = CGAffineTransform(rotationAngle: .pi)
+    let translateTransform = CGAffineTransform(translationX: 200, y: 200)
+    let comboTransform = scaleTransform.concatenating(rotateTransform).concatenating(translateTransform)
+    square.transform = comboTransform
+}
+```
+### Use identity property to undo any animations, use with completion closure
+
+```swift
+square.transform = CGAffineTransform.identity
+```
+
+```swift
+UIView.animate(withDuration: 5.0, animations: {
+    let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+    let rotateTransform = CGAffineTransform(rotationAngle: .pi)
+    let translateTransform = CGAffineTransform(translationX: 200, y: 200)
+    let comboTransform = scaleTransform.concatenating(rotateTransform).concatenating(translateTransform)
+    square.transform = comboTransform
+}) {(_) in
+    UIView.animate(withDuration: 5.0, animations: {
+        square.transform = CGAffineTransform.identity
+    })
+}
+```
 
 
 
