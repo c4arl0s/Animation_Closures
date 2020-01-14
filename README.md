@@ -39,4 +39,35 @@ UIView.animate(withDuration: 5.0) {
 }
 ```
 
+### Animate frame and center properties.
+
+```swift
+UIView.animate(withDuration: 5.0) {
+    square.center = CGPoint(x: 300, y: 300)
+    square.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
+    //Take a look how prioritize the origin, 300 vs 100
+}
+```
+
+# Add a completion Handler
+
+- Similar to animations parameter, completion is also a closure.
+- Completion closure is executed after your animations have completed (as the name suggest)
+
+```swift
+UIView.animate(withDuration: 5.0) {
+    square.backgroundColor = .orange
+}
+
+UIView.animate(withDuration: 5.0, animations: {
+    square.backgroundColor = .orange
+    square.frame = CGRect(x: 150, y: 150, width: 200, height: 200)
+}) { (_) in
+    UIView.animate(withDuration: 5.0, animations: {
+        square.backgroundColor = .purple
+        square.frame = smallFrame
+    })
+}
+```
+
 
