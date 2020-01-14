@@ -66,4 +66,16 @@ UIView.animate(withDuration: 5.0, animations: {
 }
 ```
 
+# Add a delay or custom options
+
+```swift
+UIView.animate(withDuration: 5.0, delay: 2.0, options: [.repeat], animations: {
+    square.backgroundColor = .orange
+    square.frame = CGRect(x: 400, y: 400, width: 100, height: 100)
+}, completion: nil)
+```
+
+
+
+
 
