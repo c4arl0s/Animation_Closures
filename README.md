@@ -55,10 +55,6 @@ UIView.animate(withDuration: 5.0) {
 - Completion closure is executed after your animations have completed (as the name suggest)
 
 ```swift
-UIView.animate(withDuration: 5.0) {
-    square.backgroundColor = .orange
-}
-
 UIView.animate(withDuration: 5.0, animations: {
     square.backgroundColor = .orange
     square.frame = CGRect(x: 150, y: 150, width: 200, height: 200)
