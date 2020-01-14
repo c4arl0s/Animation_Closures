@@ -75,6 +75,16 @@ UIView.animate(withDuration: 5.0, delay: 2.0, options: [.repeat], animations: {
 }, completion: nil)
 ```
 
+# The Transform Property
+
+- The transform property is an instance of the structure CGAffineTransform.
+- It is used to change the scale, rotate or move the view without calculating changes to the view's frame.
+
+### An Affine transform is a 3x3 matrix that maps each point in an untransformed view to another point, resulting in a transformed view.
+
+- You won't need an advanced math degree to use them.
+
+
 
 
 
